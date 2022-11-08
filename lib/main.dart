@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/movies/domain/entities/movie.dart';
 
 void main() {
+
   runApp(const MyApp());
 }
 
@@ -106,7 +108,38 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: (){
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return Dialog(
+                  shape: RoundedRectangleBorder(
+                      borderRadius:
+                      BorderRadius.circular(20.0)), //this right here
+                  child: SizedBox(
+                    height: 200,
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const TextField(
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'What do you want to remember?'),
+                          ),
+                          SizedBox(
+                            width: 320.0,
+
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              });
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
