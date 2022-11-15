@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:movie_app/core/error/exception.dart';
 import 'package:movie_app/core/error/failure.dart';

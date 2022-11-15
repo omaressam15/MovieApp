@@ -1,5 +1,5 @@
 
-class AppConstant{
+class ApiConstance{
 
   static String baseUrl(String url){
     return 'https://api.themoviedb.org/3/movie/$url?api_key=$key';
@@ -9,5 +9,9 @@ class AppConstant{
   static String nowPlayingMovies = 'now_playing';
   static String popularMovies = 'popular';
   static String topRatedMovies = 'top_rated';
+
+  static String baseImageUrl = 'https://image.tmdb.org/t/p/w500';
+
+  static String getImage(String images)=>"$baseImageUrl$images";
 
 }

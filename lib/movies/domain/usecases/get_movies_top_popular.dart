@@ -4,11 +4,11 @@ import '../../../core/error/failure.dart';
 import '../entities/movie.dart';
 import '../repository/base_movie_repository.dart';
 
-class GetMoviesTopPopular {
+class GetMoviesTopPopularUseCases {
 
   late BaseMovieRepository baseMovieRepository;
 
-  GetMoviesTopPopular(this.baseMovieRepository);
+  GetMoviesTopPopularUseCases(this.baseMovieRepository);
 
   Future<Either<Failure,List<Movies>>> execute ()async {
 

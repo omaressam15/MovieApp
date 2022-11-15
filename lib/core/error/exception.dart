@@ -2,7 +2,7 @@ import '../network/error_message_model.dart';
 
 class ServerException implements Exception {
 
-  ErrorMassage errorMassage;
+  ErrorMassageModel errorMassage;
 
   ServerException({required this.errorMassage});
 }

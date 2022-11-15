@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class ErrorMassage extends Equatable {
+class ErrorMassageModel extends Equatable {
 
  final int statusCode ;
 
@@ -8,10 +8,10 @@ class ErrorMassage extends Equatable {
 
  final bool success;
 
- const ErrorMassage({required this.statusCode,required this.statusMassage,required this.success});
+ const ErrorMassageModel({required this.statusCode,required this.statusMassage,required this.success});
 
- factory ErrorMassage.fromJson(Map<String,dynamic>json)=>
-     ErrorMassage(
+ factory ErrorMassageModel.fromJson(Map<String,dynamic>json)=>
+     ErrorMassageModel(
        statusCode: json['"status_code'],
        statusMassage: json['status_message"'],
        success: json['success'],
