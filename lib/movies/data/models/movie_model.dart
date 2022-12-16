@@ -17,7 +17,7 @@ class MovieModel extends Movies {
         genreIds: List<int>.from(jason['genre_ids'].map((e) => e)),
         id: jason['id'],
         title: jason['title'],
-        backdropPath: jason['backdrop_path'],
+        backdropPath: jason['poster_path'],
         overview: jason['overview'],
         voteAverage: jason['vote_average'].toDouble()
     );

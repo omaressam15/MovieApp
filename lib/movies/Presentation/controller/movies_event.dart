@@ -1,6 +1,5 @@
 
 abstract class MoviesEvent {
-
   MoviesEvent();
 }
 

@@ -13,7 +13,7 @@ class ErrorMassageModel extends Equatable {
  factory ErrorMassageModel.fromJson(Map<String,dynamic>json)=>
      ErrorMassageModel(
        statusCode: json['"status_code'],
-       statusMassage: json['status_message"'],
+       statusMassage: json['status_message'],
        success: json['success'],
      );
 

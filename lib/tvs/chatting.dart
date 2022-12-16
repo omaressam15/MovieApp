@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-import 'core/service/service_locator.dart';
-import 'movies/Presentation/screens/movie.dart';
+import 'package:agora_chat_sdk/agora_chat_sdk.dart';
 
-/*
 class AgoraChatConfig {
   static const String appKey = "71852835#1045629";
-  static const String userId = "omar2";
+  static const String userId = "omar1";
   static const String agoraToken = "007eJxTYBDeZnjm6Y7JotKcDLO/bwre6MMf6RF5ql1FMWW9wo7Oj2cUGExNDUwsk00tTU3TLE1MLJMSjVOTTQ2MkkyNzSwNjdMSY2bPSG4IZGSQXOzEzMjAysAIhCC+CkNioqlZSqKlga55YmqKrqEhkEhMSrLUNbc0Nks2TrY0TUq0AAC+ViYG";
-  static String createUserName = 'Omar3';
-  static String createUserPass = '123456';
 }
-*/
 
 void main() {
-  ServiceLocator().init();
   runApp(const MyApp());
 }
 
@@ -28,14 +22,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MoviesScreen(),
-      themeMode: ThemeMode.system,
-      darkTheme: ThemeData.dark(),
+      home: const MyHomePage(title: 'Flutter SDK Demo'),
     );
   }
 }
 
-/*class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
@@ -44,7 +36,7 @@ class MyApp extends StatelessWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> *//*{
+class _MyHomePageState extends State<MyHomePage> {
   ScrollController scrollController = ScrollController();
   String? _messageContent, _chatId;
   final List<String> _logText = [];
@@ -98,17 +90,6 @@ class _MyHomePageState extends State<MyHomePage> *//*{
                   child: TextButton(
                     onPressed: _signOut,
                     child: const Text("SIGN OUT"),
-                    style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.white),
-                      backgroundColor:
-                      MaterialStateProperty.all(Colors.lightBlue),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: _createUser,
-                    child: const Text("create"),
                     style: ButtonStyle(
                       foregroundColor: MaterialStateProperty.all(Colors.white),
                       backgroundColor:
@@ -170,7 +151,6 @@ class _MyHomePageState extends State<MyHomePage> *//*{
     );
   }
 
-
   void _signIn() async {
     try {
       await ChatClient.getInstance.loginWithAgoraToken(
@@ -186,15 +166,6 @@ class _MyHomePageState extends State<MyHomePage> *//*{
   void _signOut() async {
     try {
       await ChatClient.getInstance.logout(true);
-      _addLogToConsole("sign out succeed");
-    } on ChatError catch (e) {
-      _addLogToConsole(
-          "sign out failed, code: ${e.code}, desc: ${e.description}");
-    }
-  }
-void _createUser() async {
-    try {
-      await ChatClient.getInstance.createAccount("omarEssam","car123");
       _addLogToConsole("sign out succeed");
     } on ChatError catch (e) {
       _addLogToConsole(
@@ -295,4 +266,4 @@ void _createUser() async {
   String get _timeString {
     return DateTime.now().toString().split(".").first;
   }
-}*/
+}
