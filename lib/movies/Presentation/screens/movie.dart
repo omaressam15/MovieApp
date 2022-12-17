@@ -6,6 +6,8 @@ import 'package:movie_app/movies/Presentation/components/now_playing_movies_comp
 import 'package:movie_app/movies/Presentation/components/popular_movies_component.dart';
 import 'package:movie_app/movies/Presentation/components/top_rating_movies_component.dart';
 import 'package:movie_app/movies/Presentation/controller/movies_event.dart';
+import 'package:movie_app/movies/Presentation/screens/see_more_popular_movies.dart';
+import 'package:movie_app/movies/Presentation/screens/see_more_rated_movies.dart';
 import '../../../core/service/service_locator.dart';
 import '../controller/movies_bloc.dart';
 
@@ -45,8 +47,13 @@ class MoviesScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        /// TODO : NAVIGATION TO POPULAR SCREEN
+                        Navigator.push(
+                          context,
+                            MaterialPageRoute(builder: (context) => const SeeMorePopularMovies()),
+                          /// TODO : NAVIGATE TO MOVIE DETAILS
+                        );
                       },
+
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -84,6 +91,11 @@ class MoviesScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const SeeMoreRatedMovies()),
+                          /// TODO : NAVIGATE TO MOVIE DETAILS
+                        );
                         /// TODO : NAVIGATION TO Top Rated Movies Screen
                       },
                       child: Padding(
